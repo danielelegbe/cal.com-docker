@@ -44,5 +44,11 @@ services:
     environment:
       - SERVICE_FQDN_CALCOM_3000
       - SERVICE_FQDN_CALCOM
+      - NEXTAUTH_URL=${SERVICE_FQDN_CALCOM}/api/auth
+      - EMAIL_SERVER_HOST=${SMTP_HOST:-test.example.com}
+      - EMAIL_SERVER_PORT=${SMTP_PORT:-587}
+      - EMAIL_SERVER_USER=${SMTP_USER:-test}
+      - EMAIL_SERVER_PASSWORD=${SMTP_PASSWORD:-test}
+      - EMAIL_FROM=${MAIL_FROM:-test@example.com}
     depends_on:
       - database
