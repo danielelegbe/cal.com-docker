@@ -42,8 +42,6 @@ services:
       - 3000:3000
     env_file: .env
     environment:
-      - DATABASE_URL: postgres://${SERVICE_USER_POSTGRES}:${SERVICE_PASSWORD_POSTGRES}@postgres:5432/${POSTGRES_DATABASE:-calcom}
-      - DATABASE_DIRECT_URL: postgres://${SERVICE_USER_POSTGRES}:${SERVICE_PASSWORD_POSTGRES}@postgres:5432/${POSTGRES_DATABASE:-calcom}
       - SERVICE_FQDN_CALCOM_3000
       - SERVICE_FQDN_CALCOM
     depends_on:
